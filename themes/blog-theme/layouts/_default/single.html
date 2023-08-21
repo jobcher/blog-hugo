@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    {{ partial "head.html" . }}
+    <title>{{.Title}}</title>
+</head>
+
+<body>
+    <div id="post" class="post">
+        <article class="article">
+            <header>
+                <h1 class="post-title">{{ .Title }}</h1>
+            </header>
+            {{.Content}}
+        </article>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
