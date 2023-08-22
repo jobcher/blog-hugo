@@ -2,3 +2,19 @@
     <img src="{{ .Site.BaseURL }}images/logo.webp" alt="logo" class="logo">
     <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
 </div>
+<nav class="nav">
+    <ul>
+        {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ if .HasChildren }}
+                    <ul>
+                        {{ range .Children }}
+                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+</nav>

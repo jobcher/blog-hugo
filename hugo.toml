@@ -2,8 +2,21 @@ baseURL = 'http://example.org/'
 theme = "blog-theme"
 languageCode = 'en-us'
 title = '打工人日志'
-paginate = 20  #每页显示行数
+paginate = 15  #每页显示行数
 paginatePath = "page"
+
+# 代码高亮
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
 
 # 搜索
 [outputs]
@@ -23,10 +36,10 @@ weight="1"
 name="文章"
 url="/posts"
 weight="2"
-[[menu.main]]
-name="新闻"
-url="/news"
-weight="3"
+#[[menu.main]]
+#name="新闻"
+#url="/news"
+#weight="3"
 [[menu.main]]
 name="导航"
 url="https://nav.jobcher.com/"
@@ -42,14 +55,13 @@ name="网站首页"
 url="/"
 weight="4"
 [[menu.foot]]
-name="博文集合"
-url="/post"
+name="博文合集"
+url="/posts"
 weight="3"
-[[menu.foot]]
-name="新闻列表"
-url="/news"
-weight="2"
+#[[menu.foot]]
+#name="新闻列表"
+#weight="2"
 [[menu.foot]]
 name="关于我们"
-url="/about"
+url="/posts/about"
 weight="1"

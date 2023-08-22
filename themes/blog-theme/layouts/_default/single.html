@@ -18,17 +18,24 @@
         <article class="article">
             {{.Content}}
             <br />
-
             <div>
                 {{with .NextInSection}}
-                <a href="{{.Permalink}}">前一页</a> 
+                <a href="{{.Permalink}}" class="prev">前一页</a>
                 {{end}}
                 {{with .PrevInSection}}
-                <a href="{{.Permalink}}">后一页</a>
+                <a href="{{.Permalink}}" class="next">后一页</a>
                 {{end}}
             </div>
         </article>
     </div>
+
+    <nav class="footer-nav">
+        <ul>
+            {{ range .Site.Menus.foot }}
+            <li><a href="{{.URL}}">{{.Name}}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
     {{ partial "footer.html" . }}
 </body>
 

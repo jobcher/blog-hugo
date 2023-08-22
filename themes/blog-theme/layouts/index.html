@@ -7,33 +7,16 @@
 </head>
 
 <body>
-    <div class="header-box">
-        <img src="{{ .Site.BaseURL }}images/logo.webp" alt="logo" class="logo">
-        <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-    </div>
-    <nav class="nav">
-        <ul>
-            {{ range .Site.Menus.main }}
-                <li>
-                    <a href="{{ .URL }}">{{ .Name }}</a>
-                    {{ if .HasChildren }}
-                        <ul>
-                            {{ range .Children }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </li>
-            {{ end }}
-        </ul>
-    </nav>
+    {{ partial "header.html" . }}
 
         <!-- <h2> 所有的文章列表 </h2> -->
     <div class="post">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
         {{ range $paginator.Pages }}
         <div class="list">
-            <a href="{{.Permalink}}">{{.Title}}</a>
+            <a href="{{.Permalink}}">
+                {{ .Title }}
+            </a>
             <span>
                 {{ .Date.Format "2006-01-02" }}
             </span>
