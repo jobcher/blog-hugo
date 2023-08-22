@@ -1,9 +1,68 @@
-{{define "main" }}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                {{ .Content }}
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    {{ partial "head.html" . }}
+    <title>网站首页</title>
+</head>
+
+<body>
+    <div class="header-box">
+        <img src="{{ .Site.BaseURL }}images/logo.webp" alt="logo" class="logo">
+        <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
     </div>
-{{ end }}
+    <nav class="nav">
+        <ul>
+            {{ range .Site.Menus.main }}
+                <li>
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ if .HasChildren }}
+                        <ul>
+                            {{ range .Children }}
+                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </li>
+            {{ end }}
+        </ul>
+    </nav>
+
+        <!-- <h2> 所有的文章列表 </h2> -->
+    <div class="post">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+        {{ range $paginator.Pages }}
+        <div class="list">
+            <a href="{{.Permalink}}">{{.Title}}</a>
+            <span>
+                {{ .Date.Format "2006-01-02" }}
+            </span>
+        </div>
+        {{ end }}
+        {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination">
+            {{ with $paginator.Prev }}
+            <a href="{{ .URL }}" class="prev"></a>
+            {{ end }}
+            <span class="current-page">{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+            {{ with $paginator.Next }}
+            <a href="{{ .URL }}" class="next"></a>
+            {{ end }}
+        </nav>
+        {{  end  }}
+    </div>
+
+<!-- 
+    <h2> 页脚导航菜单 </h2> -->
+
+    <nav class="footer-nav">
+        <ul>
+            {{ range .Site.Menus.foot }}
+            <li><a href="{{.URL}}">{{.Name}}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

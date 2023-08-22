@@ -1,7 +1,14 @@
 ---
-title: "CocoaPods 安装配置"  
-date: 2022-11-11T09:53:40+08:00
-draft: false
+title: "CocoaPods 安装及碰到问题"
+date: 2023-07-31
+draft: true
+featuredImage: "/images/cocoapods-orange-on-grey-1.jpg"
+featuredImagePreview: "/images/cocoapods-orange-on-grey-1.jpg"
+images: ['/images/cocoapods-orange-on-grey-1.jpg']
+author: "jobcher"
+tags: ["IOS 开发"]
+categories: ["IOS 开发"]
+series: ["IOS 开发"]
 ---
 ## 背景
 CocoaPods 是OS X和IOS 下的第三类库管理工具，通过CocoaPods工具我们可以为项目添加被称为`Pods`的依赖库  

@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link media="all" rel="stylesheet" href="/css/style.css">
-    <title>{{.Title}}</title>
+    {{ partial "head.html" . }}
+    <title>列表页面</title>
 </head>
-
+<body>
+    {{ partial "header.html" . }}
+    <div class="post">
+    <!-- {{ with .Site.GetPage "/post" }}<a href="{{.Permalink}}">{{ .Title }}</a>{{ end }} -->
+    {{  range .Pages }}
+        <div class="list">
+            <a href="{{.Permalink}}">{{.Title}}</a>
+            <span>
+                {{ .Date.Format "2006-01-02" }}
+            </span>
+        </div>
+    {{  end  }}
+    </div>
+    {{ partial "footer.html" . }}
+</body>
 </html>

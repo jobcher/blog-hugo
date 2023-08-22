@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <h1>所有文章列表</h1>
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+        <article>
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Summary }}</p>
+            <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+        </article>
+    {{ end }}
+    {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination">
+            {{ with $paginator.Prev }}
+                <a href="{{ .URL }}">上一页</a>
+            {{ end }}
+            {{ with $paginator.Next }}
+                <a href="{{ .URL }}">下一页</a>
+            {{ end }}
+        </nav>
+    {{ end }}
+{{ end }}

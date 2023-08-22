@@ -1,4 +1,55 @@
 baseURL = 'http://example.org/'
 theme = "blog-theme"
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = '打工人日志'
+paginate = 20  #每页显示行数
+paginatePath = "page"
+
+# 搜索
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params.algolia]
+indexName = "your_index_name"
+applicationID = "your_application_id"
+apiKey = "your_api_key"
+
+[[menu.main]]
+identifier="1"
+name="首页"
+url="/"
+weight="1"
+[[menu.main]]
+name="文章"
+url="/posts"
+weight="2"
+[[menu.main]]
+name="新闻"
+url="/news"
+weight="3"
+[[menu.main]]
+name="导航"
+url="https://nav.jobcher.com/"
+weight="4"
+[[menu.main]]
+name="关于"
+url="/posts/about"
+weight="5"
+
+
+[[menu.foot]]
+name="网站首页"
+url="/"
+weight="4"
+[[menu.foot]]
+name="博文集合"
+url="/post"
+weight="3"
+[[menu.foot]]
+name="新闻列表"
+url="/news"
+weight="2"
+[[menu.foot]]
+name="关于我们"
+url="/about"
+weight="1"
