@@ -58,6 +58,7 @@ weight="4"
 name="博文合集"
 url="/posts"
 weight="3"
+
 #[[menu.foot]]
 #name="新闻列表"
 #weight="2"
