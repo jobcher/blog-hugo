@@ -18,15 +18,6 @@ paginatePath = "page"
     style = "monokai"
     tabWidth = 4
 
-# 搜索
-[outputs]
-home = ["HTML", "RSS"]
-
-[params.algolia]
-indexName = "your_index_name"
-applicationID = "your_application_id"
-apiKey = "your_api_key"
-
 [[menu.main]]
 identifier="1"
 name="首页"
