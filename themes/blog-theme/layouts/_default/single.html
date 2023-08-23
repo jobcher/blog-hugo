@@ -16,9 +16,11 @@
             {{ end }}
         </header>
         <article class="article">
-            {{.Content}}
+                <div class="single-content">
+                    {{.Content}}
+                </div>
             <br />
-            <div>
+        <div>
                 {{with .NextInSection}}
                 <a href="{{.Permalink}}" class="prev">前一页</a>
                 {{end}}
