@@ -49,7 +49,7 @@ jobs:
       
       - name: Build with Hugo
         run: |
-          hugo -D
+          hugo -t blog-theme -D
 
       - name: Deploy Web
         uses: peaceiris/actions-gh-pages@v3.8.0
