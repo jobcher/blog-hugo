@@ -2,21 +2,33 @@
 <html lang="zh">
 <head>
     {{ partial "head.html" . }}
-    <title>列表页面</title>
+    <title>文章 - {{ .Site.Title }}</title>
 </head>
 <body>
     {{ partial "header.html" . }}
     <div class="post">
-    <!-- {{ with .Site.GetPage "/post" }}<a href="{{.Permalink}}">{{ .Title }}</a>{{ end }} -->
-    {{  range .Pages }}
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+        {{ range $paginator.Pages }}
         <div class="list">
-            <a href="{{.Permalink}}">{{.Title}}</a>
+            <a href="{{.Permalink}}">
+                {{ .Title }}
+            </a>
             <span>
                 {{ .Date.Format "2006-01-02" }}
             </span>
         </div>
-    {{  end  }}
+        {{ end }}
+        {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination">
+            {{ with $paginator.Prev }}
+            <a href="{{ .URL }}" class="prev"></a>
+            {{ end }}
+            <span class="current-page">{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+            {{ with $paginator.Next }}
+            <a href="{{ .URL }}" class="next"></a>
+            {{ end }}
+        </nav>
+        {{  end  }}
     </div>
-    {{ partial "footer.html" . }}
 </body>
 </html>
