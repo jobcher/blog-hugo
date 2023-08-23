@@ -20,7 +20,7 @@ paginatePath = "page"
 
 # 搜索
 [outputs]
-home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS"]
 
 [params.algolia]
 indexName = "your_index_name"
