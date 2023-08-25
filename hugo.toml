@@ -1,6 +1,6 @@
 baseURL = 'https://www.jobcher.com'
 theme = "blog-theme"
-languageCode = 'en-us'
+languageCode = 'zh-CN'
 title = '打工人日志'
 # 相对地址
 relativeURLs = true
