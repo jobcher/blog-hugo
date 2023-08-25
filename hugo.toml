@@ -6,7 +6,7 @@ title = '打工人日志'
 relativeURLs = true
 uglyURLs = true
 # 显示数量
-paginate = 15  #每页显示行数
+paginate = 10  #每页显示行数
 paginatePath = "page"
 
 [permalinks]
