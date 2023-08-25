@@ -1,0 +1,13 @@
+---
+baseurl: "/"
+DefaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+languageCode: "zh-cn"
+title: "jobcher"
+theme: "jobcher‘s blog"
+metaDataFormat: "yaml"
+algolia:
+  index: "jobcher_index"
+  key: "ef94efc3eb1c467010b576d19f08b1bd"
+  appID: "2FWFO9YUQW"
+---
