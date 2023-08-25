@@ -50,7 +50,7 @@ url="https://nav.jobcher.com/"
 weight="4"
 [[menu.main]]
 name="关于"
-url="/posts/about"
+url="/关于我.html"
 weight="5"
 
 
@@ -67,6 +67,6 @@ weight="4"
 #weight="2"
 [[menu.foot]]
 name="关于我们"
-url="/posts/about"
+url="/关于我.html"
 weight="1"
 
