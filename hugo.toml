@@ -40,10 +40,10 @@ weight="1"
 #name="文章"
 #url="/posts"
 #weight="2"
-#[[menu.main]]
-#name="新闻"
-#url="/news"
-#weight="3"
+[[menu.main]]
+name="日报"
+url="https://test.jobcher.com/"
+weight="3"
 [[menu.main]]
 name="导航"
 url="https://nav.jobcher.com/"
