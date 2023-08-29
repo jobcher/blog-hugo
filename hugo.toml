@@ -1,4 +1,4 @@
-baseURL = 'https://www.jobcher.com'
+baseURL = 'https://test.jobcher.com'
 theme = "blog-theme"
 languageCode = 'zh-CN'
 title = '打工人日志'
